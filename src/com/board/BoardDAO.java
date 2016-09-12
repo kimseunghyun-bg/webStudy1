@@ -38,9 +38,9 @@ public class BoardDAO {
 		String sql;
 		
 		int maxNum=maxBoardNum()+1;
+		dto.setBoardNum(maxNum);
 		
 		if(mode.equals("created")) { // ±Û¾²±â
-			dto.setBoardNum(maxNum);
 			dto.setGroupNum(maxNum);
 			dto.setOrderNo(0);
 			dto.setDepth(0);

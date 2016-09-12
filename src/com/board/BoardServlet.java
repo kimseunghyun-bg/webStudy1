@@ -219,7 +219,7 @@ public class BoardServlet extends MyServlet {
 			req.setAttribute("dto", dto);
 			req.setAttribute("page", page);
 			req.setAttribute("mode", "reply");
-			forward(req, resp, "WEB=INF/views/board/created.di");
+			forward(req, resp, "/WEB-INF/views/board/created.jsp");
 		} else if(uri.indexOf("reply_ok.do")!=-1){
 			//답변 완료
 			BoardDTO dto=new BoardDTO();
