@@ -68,7 +68,7 @@
 			<li><a href="#">고객센터</a>
 				<ul>
 				<li><a href="#" style="margin-left:230px; " onmouseover="this.style.marginLeft='230px';">자주하는질문</a></li>
-				<li><a href="#">공지사항</a></li>
+				<li><a href="<%=cp%>/notice/list.do">공지사항</a></li>
 				<li><a href="<%=cp%>/board/list.do">질문과 답변</a></li>
 				<li><a href="#">주요일정</a></li>
 				<li><a href="#">이벤트</a></li>
