@@ -238,7 +238,6 @@ public class BoardServlet extends MyServlet {
 			resp.sendRedirect(cp+"/board/list.do?page="+page);
 		}		
 		
-		
 	}
 
 }

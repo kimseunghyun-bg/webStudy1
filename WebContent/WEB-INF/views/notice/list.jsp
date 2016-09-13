@@ -77,24 +77,52 @@
 					      <td width="50" style="color: #ffffff;">첨부</td>
 					  </tr>
 					 
+					 <c:forEach var="dto" items="${listNotice}">
 					  <tr align="center" bgcolor="#ffffff" height="30"> 
-					      <td align="center">1</td>
+					      <td><span style="display: inline-block; width: 28px; height: 18px; line-height: 18px; background: #ED4C00; color: #FFFFFF">공지</span></td>
 					      <td align="left" style="padding-left: 10px;">
-					          <a href='#'>테스트...</a>
+					          <a href='${articleUrl}&num=${dto.num}'>${dto.subject}</a>
 					      </td>
-					      <td align="center">홍길동</td>
-					      <td align="center">2010-10-10</td>
-					      <td align="center">1</td>
-					      <td align="center">&nbsp;</td>
+					      <td align="center">${dto.userName}</td>
+					      <td align="center">${dto.created}</td>
+					      <td align="center">${dto.hitCount}</td>
+					      <td align="center">
+								<c:if test="${not empty dto.saveFilename}">
+									<a href="<%=cp%>/notice/download.do?num=${dto.num}"><img src="<%=cp%>/res/images/disk.gif"></a>								
+								</c:if>
+							</td>
 					  </tr>
 					  <tr><td height="1" colspan="6" bgcolor="#e4e4e4"></td></tr> 
+					 </c:forEach>
 					 
+					 <c:forEach var="dto" items="${list}">
+					  <tr align="center" bgcolor="#ffffff" height="30"> 
+					      <td align="center">${dto.listNum}</td>
+					      <td align="left" style="padding-left: 10px;">
+					          <a href='${articleUrl}&num=${dto.num}'>${dto.subject}</a>
+					      </td>
+					      <td align="center">${dto.userName}</td>
+					      <td align="center">${dto.created}</td>
+					      <td align="center">${dto.hitCount}</td>
+					      <td align="center">
+								<c:if test="${not empty dto.saveFilename}">
+									<a href="<%=cp%>/notice/download.do?num=${dto.num}"><img src="<%=cp%>/res/images/disk.gif"></a>
+								</c:if>
+							</td>
+					  </tr>
+					  <tr><td height="1" colspan="6" bgcolor="#e4e4e4"></td></tr> 
+					 </c:forEach>
 					</table>
 					 
 					<table style="width: 700px; margin: 0px auto; border-spacing: 0px;">
 					   <tr height="35">
 						<td align="center">
-					        1 2 3
+					        <c:if test="${dataCount==0 }">
+			                       등록된 게시물이 없습니다.
+			                </c:if>
+			                <c:if test="${dataCount!=0 }">
+			                    ${paging}
+			                </c:if>
 						</td>
 					   </tr>
 					</table>

@@ -1,13 +1,20 @@
 package com.notice;
 
 public class NoticeDTO {
-	private int num, notice;
+	private int listNum, num, notice;
 	private String userId, userName;
 	private String subject, content, created;
 	private int hitCount;
 	private String saveFilename, originalFilename;
 	private long filesize;
 	
+	
+	public int getListNum() {
+		return listNum;
+	}
+	public void setListNum(int listNum) {
+		this.listNum = listNum;
+	}
 	public int getNum() {
 		return num;
 	}
