@@ -24,7 +24,7 @@ public class BoardServlet extends MyServlet {
 
 	@Override
 	protected void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
+		// req.setCharacterEncoding("utf-8");
 		
 		HttpSession session=req.getSession();
 		SessionInfo info=(SessionInfo)session.getAttribute("member");
