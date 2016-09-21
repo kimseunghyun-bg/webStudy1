@@ -1,3 +1,4 @@
+<%@page import="com.util.CountManager"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -28,7 +29,11 @@
 	
 	<div class="layoutBody">
 	    <div class="bodyFrame1" style="min-height: 450px;">
-                 메인 화면 입니다.
+					메인 화면 입니다.<br>
+				현재 접속자 수: <%=CountManager.getCurrentCount()%><br>
+				오늘 접속자 수: <%=CountManager.getToDayCount()%><br>
+				어제 접속자 수: <%=CountManager.getYesterDayCount()%><br>
+				전체 접속자 수: <%=CountManager.getTotalCount()%><br>
          </div>
     </div>
 	

@@ -24,14 +24,19 @@ public class BoardServlet extends MyServlet {
 
 	@Override
 	protected void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		//필터로 인코딩함.
 		// req.setCharacterEncoding("utf-8");
 		
 		HttpSession session=req.getSession();
 		SessionInfo info=(SessionInfo)session.getAttribute("member");
+		
+		/*	//필터에서 검사
 		if(info==null) {
 			forward(req, resp, "/WEB-INF/views/member/login.jsp");
 			return;
 		}
+		*/
 		
 		String uri=req.getRequestURI();
 		String cp=req.getContextPath();
