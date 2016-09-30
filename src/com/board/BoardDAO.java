@@ -6,10 +6,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.util.DBCPConn;
 import com.util.DBConn;
 
 public class BoardDAO {
-	private Connection conn=DBConn.getConnection();
+	//private Connection conn=DBConn.getConnection();
+	private Connection conn=DBCPConn.getConnection();
 	
 	public int maxBoardNum() {
 		int result=0;
